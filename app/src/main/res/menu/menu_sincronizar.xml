@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:yourapp="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/sincronizar"
+        android:icon="@mipmap/ic_sincronizar"
+        yourapp:showAsAction="ifRoom"
+        android:title="sincronizar" />
+
+</menu>

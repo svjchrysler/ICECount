@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FFF"
+    tools:context=".Activities.CarsCountActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/cronometro"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:id="@+id/txtvCronometro" />
+
+    <LinearLayout
+        android:id="@+id/linears"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/altura_category"
+            android:layout_weight=".33"
+            android:src="@drawable/particular"
+            android:id="@+id/imgParticular" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/altura_category"
+            android:layout_weight=".33"
+            android:src="@drawable/bicicleta"
+            android:id="@+id/imgBicicleta" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/altura_category"
+            android:src="@drawable/publico"
+            android:layout_weight=".33"
+            android:id="@+id/imgPublico" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".33"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_fuente_categoria"
+            android:id="@+id/txtparticular"
+            android:hint="Total: 0" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".33"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_fuente_categoria"
+            android:id="@+id/txtbicicleta"
+            android:hint="Total: 0" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".33"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_fuente_categoria"
+            android:id="@+id/txtpublico"
+            android:hint="Total: 0" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lineari"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/altura_category"
+            android:src="@drawable/repartidor"
+            android:layout_weight=".33"
+            android:id="@+id/imgRepartidor" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/altura_category"
+            android:src="@drawable/motocicleta"
+            android:layout_weight=".33"
+            android:id="@+id/imgMotoclicleta" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/altura_category"
+            android:src="@drawable/taxi"
+            android:layout_weight=".33"
+            android:id="@+id/imgTaxi" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".33"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_fuente_categoria"
+            android:id="@+id/txtrepartidor"
+            android:hint="Total: 0" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".33"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_fuente_categoria"
+            android:id="@+id/txtmotoclicleta"
+            android:hint="Total: 0" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".33"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_fuente_categoria"
+            android:id="@+id/txttaxi"
+            android:hint="Total: 0" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

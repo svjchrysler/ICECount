@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FFF"
+    tools:context=".Activities.PeopleCountActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cronometro"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:id="@+id/txtvCronometro" />
+
+    <LinearLayout
+        android:id="@+id/linears"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/altura_category"
+            android:src="@drawable/ninia"
+            android:layout_weight=".50"
+            android:id="@+id/imgNinia" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/altura_category"
+            android:layout_weight=".50"
+            android:src="@drawable/hombre"
+            android:id="@+id/imgHombre" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_fuente_categoria"
+            android:id="@+id/txtninia"
+            android:hint="Total: 0" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_fuente_categoria"
+            android:id="@+id/txthombre"
+            android:hint="Total: 0" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lineari"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/altura_category"
+            android:src="@drawable/abuelo"
+            android:layout_weight=".50"
+            android:id="@+id/imgAnciano" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/altura_category"
+            android:src="@drawable/mujer"
+            android:layout_weight=".50"
+            android:id="@+id/imgMujer" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_fuente_categoria"
+            android:id="@+id/txtabuelo"
+            android:hint="Total: 0" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_fuente_categoria"
+            android:id="@+id/txtmujer"
+            android:hint="Total: 0" />
+
+    </LinearLayout>
+
+</LinearLayout>

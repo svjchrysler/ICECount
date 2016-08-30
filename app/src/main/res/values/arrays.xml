@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="opciones_people">
+        <item>Hombre</item>
+        <item>Mujer</item>
+        <item>Niño</item>
+        <item>Anciano</item>
+    </string-array>
+
+    <string-array name="opciones_cars">
+        <item>Particular</item>
+        <item>Bicicleta</item>
+        <item>Publico</item>
+        <item>Repartidor</item>
+        <item>Motocicleta</item>
+        <item>Taxi</item>
+    </string-array>
+</resources>

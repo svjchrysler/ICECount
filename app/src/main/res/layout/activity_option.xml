@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#FFF"
+    android:orientation="vertical"
+    tools:context=".Activities.OptionActivity">
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_margin="10dp"
+        android:layout_height="50dp"
+        android:textAlignment="center"
+        android:inputType="text"
+        android:hint="@string/nombre_encuestador"
+        android:id="@+id/edtNombre" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgPeople"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:src="@drawable/people"
+            android:layout_weight="0.50" />
+
+        <ImageView
+            android:id="@+id/imgCars"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:src="@drawable/cars"
+            android:layout_weight="0.50" />
+
+    </LinearLayout>
+
+</LinearLayout>

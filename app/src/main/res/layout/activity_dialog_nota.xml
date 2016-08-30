@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#FFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="15dp"
+        android:text="@string/title_dialog" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtCalle1"
+                android:hint="@string/calle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textIsSelectable="false" />
+
+            <EditText
+                android:id="@+id/edtCalle2"
+                android:hint="@string/calle2"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtCalle3"
+                android:hint="@string/calle3"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtTemperatura"
+                android:hint="@string/temperatura"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/condiciones_clima" />
+
+            <Spinner
+                android:id="@+id/spCondicionesClimaticas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog"></Spinner>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Tienda Fija"
+                    android:layout_weight=".50"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/btnFijo"
+                    android:src="@drawable/vendedor_fijo"
+                    android:layout_width="0dp"
+                    android:textSize="20dp"
+                    android:padding="@dimen/padding_tienda"
+                    android:layout_height="@dimen/altura_tienda"
+                    android:layout_weight=".50" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edtnotafijo"
+                    android:hint="Tipo de Comercio"
+                    android:inputType="text"
+                    android:layout_width="0dp"
+                    android:layout_weight=".70"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtcountfijo"
+                    android:textAlignment="center"
+                    android:hint="# Fijo"
+                    android:inputType="number"
+                    android:layout_width="0dp"
+                    android:layout_weight=".30"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Vendedor Ambulante"
+                    android:layout_weight=".50"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:textStyle="bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/btnAmbulante"
+                    android:src="@drawable/vendedor_ambulante"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/altura_tienda"
+                    android:layout_weight=".50" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edtnotaambulante"
+                    android:hint="Tipo de Comercio"
+                    android:layout_width="0dp"
+                    android:inputType="text"
+                    android:layout_weight=".70"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtcountambulante"
+                    android:textAlignment="center"
+                    android:hint="# Ambulante"
+                    android:inputType="number"
+                    android:layout_width="0dp"
+                    android:layout_weight=".30"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/indigena_h"
+                    android:layout_width="0dp"
+                    android:padding="@dimen/padding_tienda"
+                    android:layout_height="@dimen/altura_tienda"
+                    android:layout_weight=".50" />
+
+                <ImageView
+                    android:src="@drawable/indigena_m"
+                    android:padding="@dimen/padding_tienda"
+                    android:layout_weight=".50"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/altura_tienda" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edtcountindigenah"
+                    android:hint="# Indigena Hombre"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="0dp"
+                    android:inputType="number"
+                    android:layout_weight=".50"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtcountindigenam"
+                    android:hint="# Indigena Mujer"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="0dp"
+                    android:inputType="number"
+                    android:layout_weight=".50"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Mapeo de Personas"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="bold"
+                    android:layout_width="0dp"
+                    android:layout_weight=".70"
+                    android:layout_height="wrap_content" />
+
+                <ImageButton
+                    android:layout_marginRight="0dp"
+                    android:background="#FFF"
+                    android:id="@+id/camera"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_camera"
+                    android:layout_weight=".30"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Estado Acera"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight=".70"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageButton
+                    android:layout_marginRight="0dp"
+                    android:layout_gravity="right"
+                    android:background="#FFF"
+                    android:id="@+id/cameraestado"
+                    android:src="@drawable/ic_camera"
+                    android:layout_weight=".30"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edtComentarioAcera"
+                android:hint="Comentario Estado Acera"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtNota"
+                android:hint="Observaciones"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:gravity="right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnGuardar"
+                    android:text="Guardar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnCacelar"
+                    android:text="Cancelar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Conteo</string>
+    <string name="nombre_encuestador">Nombre del Encuestador</string>
+
+    /* Validaciones */
+    <string name="v_nombre">Escriba su nombre porfavor</string>
+    <string name="cronometro">10:00</string>
+    <string name="title_dialog">Observaciones</string>
+
+    /* Dialog */
+    <string name="calle1">Calle de Relevamiento</string>
+    <string name="calle2">Calle lateral A</string>
+    <string name="calle3">Calle lateral B</string>
+    <string name="temperatura">Temperatura</string>
+    <string name="condiciones_clima">Condiciones del Clima</string>
+</resources>

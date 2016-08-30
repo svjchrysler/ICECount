@@ -1,0 +1,9 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="altura_category">80dp</dimen>
+    <dimen name="size_fuente_categoria">20sp</dimen>
+    <dimen name="padding_tienda">5dp</dimen>
+    <dimen name="altura_tienda">90dp</dimen>
+</resources>
