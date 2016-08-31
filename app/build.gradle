@@ -42,4 +42,7 @@ dependencies {
     /* Volley Peticiones */
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    /* RxImagePicker */
+    compile 'com.mlsdev.rximagepicker:library:1.3.1'
+    compile 'io.reactivex:rxjava:1.0.14'
 }

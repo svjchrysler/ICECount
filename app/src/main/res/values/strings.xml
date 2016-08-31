@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Conteo</string>
+    <string name="app_name">ICE Count</string>
     <string name="nombre_encuestador">Nombre del Encuestador</string>
 
     /* Validaciones */

@@ -6,8 +6,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.support.v4.view.MenuItemCompat;
@@ -39,12 +41,16 @@ import com.icescz.conteo.Models.Person;
 import com.icescz.conteo.R;
 import com.kosalgeek.android.photoutil.CameraPhoto;
 import com.kosalgeek.android.photoutil.ImageLoader;
+import com.mlsdev.rximagepicker.RxImagePicker;
+import com.mlsdev.rximagepicker.Sources;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
+import java.io.BufferedInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -53,6 +59,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.realm.Realm;
+import rx.functions.Action1;
 
 public class PeopleCountActivity extends AppCompatActivity implements View.OnClickListener, Validator.ValidationListener {
 
@@ -96,7 +103,6 @@ public class PeopleCountActivity extends AppCompatActivity implements View.OnCli
     private String pathPhoto = "";
 
     private Bitmap bitmapPhotoEstado;
-    private CameraPhoto cameraPhotoEstado;
     private String pathPhotoEstado = "";
 
     @NotEmpty(message = "El campo es obligatorio")
@@ -220,67 +226,29 @@ public class PeopleCountActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void obtenerImagen(int id) {
-        imagenCamera(id);
-    }
-
-    private void imagenCamera(int id) {
-        if (id==1)
-            cameraPhoto = new CameraPhoto(PeopleCountActivity.this);
-        if (id == 2)
-            cameraPhotoEstado = new CameraPhoto(PeopleCountActivity.this);
-
-        try {
-            if (id == 1) {
-                startActivityForResult(cameraPhoto.takePhotoIntent(), 1);
-                cameraPhoto.addToGallery();
-            }
-            if (id == 2) {
-                startActivityForResult(cameraPhotoEstado.takePhotoIntent(), 2);
-                cameraPhotoEstado.addToGallery();
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            String photoPath = cameraPhoto.getPhotoPath();
-            cargarImagen(photoPath, 1);
-        }
-
-        if (requestCode == 2) {
-            String photoPath = cameraPhotoEstado.getPhotoPath();
-            cargarImagen(photoPath, 2);
-        }
-
-    }
-
-    protected void cargarImagen(String photoPath, int id) {
         if (id == 1)
-            pathPhoto = photoPath;
+            cargarImagenMapeo();
         if (id == 2)
-            pathPhotoEstado = photoPath;
-        try {
-            Bitmap imageBitmap = ImageLoader.init().from(photoPath).getBitmap();
-            if (id == 1) {
-                bitmapPhoto = imageBitmap;
-                imgCamera.setImageBitmap(imageBitmap);
-            }
-            if (id == 2) {
-                bitmapPhotoEstado = imageBitmap;
-                imgCameraEstado.setImageBitmap(imageBitmap);
-            }
-
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+            cargarImagenAcera();
     }
 
+    private void cargarImagenAcera() {
+        RxImagePicker.with(this).requestImage(Sources.CAMERA).subscribe(new Action1<Uri>() {
+            @Override
+            public void call(Uri uri) {
+                imgCameraEstado.setImageURI(uri);
+            }
+        });
+    }
+
+    private void cargarImagenMapeo() {
+        RxImagePicker.with(this).requestImage(Sources.CAMERA).subscribe(new Action1<Uri>() {
+            @Override
+            public void call(Uri uri) {
+                imgCamera.setImageURI(uri);
+            }
+        });
+    }
 
     private void advertenciaClose() {
         final AlertDialog.Builder alertAdvertencia = new AlertDialog.Builder(this);
@@ -338,7 +306,11 @@ public class PeopleCountActivity extends AppCompatActivity implements View.OnCli
             public void onFinish() {
                 txtvCronometro.setText("Terminado");
                 swTerminado = true;
-                ventanaDatos();
+                swVentanaDatos = true;
+                if (dialog != null)
+                    dialog.dismiss();
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                //ventanaDatos();
             }
         };
 
@@ -398,7 +370,7 @@ public class PeopleCountActivity extends AppCompatActivity implements View.OnCli
                     break;
             }
         } else {
-            initCronometro(600);
+            initCronometro(10);
             horafechainicio();
             cargarInformacion(param, n);
         }
@@ -424,7 +396,7 @@ public class PeopleCountActivity extends AppCompatActivity implements View.OnCli
         dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
             @Override
             public boolean onKey(DialogInterface dialogInterface, int i, KeyEvent keyEvent) {
-                if (i == KeyEvent.KEYCODE_BACK && swventana) {
+                if (i == KeyEvent.KEYCODE_BACK && swventana && !swTerminado) {
                     dialog.dismiss();
                     swVentanaDatos = false;
                     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);

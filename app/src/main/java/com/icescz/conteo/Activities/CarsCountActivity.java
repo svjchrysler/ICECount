@@ -8,6 +8,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.support.v4.view.MenuItemCompat;
@@ -35,6 +36,8 @@ import com.icescz.conteo.Models.Person;
 import com.icescz.conteo.R;
 import com.kosalgeek.android.photoutil.CameraPhoto;
 import com.kosalgeek.android.photoutil.ImageLoader;
+import com.mlsdev.rximagepicker.RxImagePicker;
+import com.mlsdev.rximagepicker.Sources;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
@@ -49,6 +52,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.realm.Realm;
+import rx.functions.Action1;
 
 public class CarsCountActivity extends AppCompatActivity implements View.OnClickListener, Validator.ValidationListener {
 
@@ -450,7 +454,28 @@ public class CarsCountActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void obtenerImagen(int id) {
-        imagenCamera(id);
+        if (id == 1)
+            cargarImagenMapeo();
+        if (id == 2)
+            cargarImagenAcera();
+    }
+
+    private void cargarImagenAcera() {
+        RxImagePicker.with(this).requestImage(Sources.CAMERA).subscribe(new Action1<Uri>() {
+            @Override
+            public void call(Uri uri) {
+                imgCameraEstado.setImageURI(uri);
+            }
+        });
+    }
+
+    private void cargarImagenMapeo() {
+        RxImagePicker.with(this).requestImage(Sources.CAMERA).subscribe(new Action1<Uri>() {
+            @Override
+            public void call(Uri uri) {
+                imgCamera.setImageURI(uri);
+            }
+        });
     }
 
     private void imagenCamera(int id) {
